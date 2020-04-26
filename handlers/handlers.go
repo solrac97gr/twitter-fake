@@ -7,11 +7,15 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
+	"github.com/solrac97gr/twitter-fake/middlewares"
+	"github.com/solrac97gr/twitter-fake/routers"
 )
 
 /*Handlers : set the port,cors,handlers and then serve the api*/
 func Handlers() {
 	router := mux.NewRouter()
+
+	router.HandleFunc("/registro", middlewares.CheckDB(routers.Register).Methods("POST")
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
