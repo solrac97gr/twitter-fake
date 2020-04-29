@@ -11,7 +11,7 @@ import (
 /*UserExist : Check if the user is alredy register*/
 func UserExist(email string) (models.User, bool, string) {
 	ctx, cancel := context.WithTimeout(context.Background(),
-		15*time.Second)
+		30*time.Second)
 	defer cancel()
 
 	db := MongoCN.Database("twitter")
@@ -22,6 +22,7 @@ func UserExist(email string) (models.User, bool, string) {
 	var result models.User
 
 	err := col.FindOne(ctx, condition).Decode(&result)
+
 	ID := result.ID.Hex()
 
 	if err != nil {
