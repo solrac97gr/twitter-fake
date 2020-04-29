@@ -6,8 +6,8 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-/*Users : The User model*/
-type Users struct {
+/*User : The User model*/
+type User struct {
 	ID        primitive.ObjectID `bson:"_id,omitempty" json:"id"`
 	Name      string             `bson:"name" json:"name,omitempty"`
 	Lastname  string             `bson:"lastname" json:"lastname,omitempty"`
