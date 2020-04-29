@@ -11,9 +11,7 @@ import (
 /*MongoCN : content a mongoDB conection*/
 var MongoCN = ConectDB()
 
-var clientOptions = options.Client().ApplyURI(
-	"mongodb+srv://root:-solrac97G@golang-course-olaby.mongodb.net/test?retryWrites=true&w=majority",
-)
+var clientOptions = options.Client().ApplyURI("mongodb+srv://root:-solrac97G@golang-course-olaby.mongodb.net/test?retryWrites=true&w=majority")
 
 /*ConectDB : Create a conection to mongoDB and return the conection*/
 func ConectDB() *mongo.Client {
